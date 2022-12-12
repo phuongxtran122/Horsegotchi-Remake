@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import './Styles/App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Intro from './Components/Intro';
+import Icons from './Assets/Icons.js';
+class App extends Component {
+  // refreshes the page if clicked on
+  refreshPage = () => {
+    window.location.reload(false);
+  }
+  render() {
+    
+    return (
+      <div className="App">
+        <div className='center' onClick={this.refreshPage}><img className='center' src={Icons['name']} alt="name"/></div>
+        <Intro></Intro>
+      </div>
+    );    
+  }
 }
+
 
 export default App;
